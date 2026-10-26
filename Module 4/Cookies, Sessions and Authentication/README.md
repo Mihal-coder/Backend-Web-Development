@@ -24,3 +24,4 @@ Complete the TODOs in:
 Required endpoints: `POST /auth/login`, `GET /auth/me`, `POST /auth/logout`.
 
 Use Postman cookie jar or curl `-c cookies.txt` and `-b cookies.txt` to preserve the cookie between requests.
+Sessions are stored in memory and expire after one hour, so restarting the server invalidates them. Login and `/auth/me` return a `user` object; `/auth/me` requires a valid signed session cookie. Logout destroys the server-side session and clears the cookie.
